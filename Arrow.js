@@ -29,3 +29,32 @@
 //   name => name.toUpperCase()
 // );
 // console.log(upperizedNames)
+
+// const student = {
+//     name: "Mahad",
+
+//     introduce: function(){
+//         console.log(this.name);
+//     }
+// }
+
+// student.introduce();
+
+
+// call(), apply(), and bind().
+const person1 = {
+    name: "Mahad"
+};
+
+const person2 = {
+    name: "Ahmed"
+};
+
+function introduce(city, country) {
+    console.log(
+        `I am ${this.name} from ${city}, ${country}`
+    );
+}
+
+// introduce.call(person1, "Kigali", "Rwanda");
+// introduce.apply(person2, ["Kigali", "Rwanda"]);
