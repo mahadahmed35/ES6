@@ -91,3 +91,12 @@
 
 
 // console.log(introduce({name: "Mahad", age: 20}));
+
+// Object destructuring in functions.
+function createUser({ name = "Guest", role = "Member", isActive = true } = {}){
+    console.log(`${name} (${role}) - Active: ${isActive}`)
+};
+
+console.log(createUser({name: "Alice"}));
+console.log(createUser({}));
+console.log(createUser());
