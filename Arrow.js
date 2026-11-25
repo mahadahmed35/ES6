@@ -58,3 +58,5 @@ function introduce(city, country) {
 
 // introduce.call(person1, "Kigali", "Rwanda");
 // introduce.apply(person2, ["Kigali", "Rwanda"]);
+const newFunction = introduce.bind( person1, "Kigali");
+newFunction("Rwanda");
