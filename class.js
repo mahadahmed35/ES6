@@ -33,17 +33,46 @@
 // console.log(student2.introduce());
 
 // this can be lost if you put it in method.
+// class Person{
+//     constructor(name){
+//         this.name = name;
+//     }
+
+//     greet(){
+//         console.log(this.name);
+//     }
+// }
+
+// const person = new Person("Mahad");
+
+// const greet = person.greet.bind(person);
+// console.log(greet());
+
+// Inheritance extends and super.
 class Person{
-    constructor(name){
+    constructor(name, age){
         this.name = name;
+        this.age = age
     }
 
     greet(){
-        console.log(this.name);
+        console.log(`Hello, I am ${this.name}`)
     }
-}
+};
 
-const person = new Person("Mahad");
+// const Student = new Person('Mahad');
 
-const greet = person.greet.bind(person);
-console.log(greet());
+// console.log(Student.greet());
+class Student extends Person{
+    constructor(age, course){
+        super(age);
+        this.course = course;
+    }
+    study(){
+        console.log(`I study ${this.course}`);
+    }
+};
+
+const student1 = new Student('Mahad', 20);
+console.log(student1.study())
+console.log(student1.greet())
