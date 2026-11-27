@@ -100,15 +100,48 @@
 
 // Validation and Utility Helpers.
 
-class Password {
-    constructor(value){
-        if(!Password.isValid(value)) throw new Error("Too short");
-        this.value = value;
-    }
-    // can be called anywhere before creating an instance.
-    static isValid(str){
-        return typeof str === "string" && str.length >= 1;
-    }
-}
+// class Password {
+//     constructor(value){
+//         if(!Password.isValid(value)) throw new Error("Too short");
+//         this.value = value;
+//     }
+//     // can be called anywhere before creating an instance.
+//     static isValid(str){
+//         return typeof str === "string" && str.length >= 1;
+//     }
+// }
 
-console.log(Password.isValid("123456"));
+// console.log(Password.isValid("123456"));
+
+// get and set.
+// class User {
+//     #age = 0;
+
+//     get age(){
+//         return this.#age;
+//     }
+
+//     set age(value){
+//         if(value < 0) throw new Error("Age cannot be negative");
+//         this.#age = value;
+//     }
+// }
+
+// const user = new User();
+// user.age = 0;
+// console.log(user.age);
+
+// Object literals:
+const person = {
+    first: "Jane",
+    last: "Doe",
+
+    get fullName(){
+        return `${this.first} ${this.last}`;
+    },
+
+    set fullName(name){
+        [this.first, this.last] = name.split(" ");
+    }
+};
+console.log(person)
